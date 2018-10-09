@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppEsecure"
+             x:Class="AppEsecure.MainPage">
+    <StackLayout>
+        <Image Source="http://18.231.176.208/gemba/images/user.jpg" HeightRequest="100" WidthRequest="50" />
+        <!-- Place new controls here -->
+        <Label Text="Username" />
+        <Entry x:Name="usernameEntry" Placeholder="username" />
+        <Label Text="Password" />
+        <Entry x:Name="passwordEntry" IsPassword="true" />
+        <Button Text="Login" Clicked="Button_Clicked" />
+        <Label x:Name="messageLabel" />
+        <Button Text="Planes"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="{x:Type local:Page2}" />
+        <Button Text="CheckList"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="{x:Type local:Page1}" />
+        <Button Text="Issues"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="{x:Type local:Page3}" />
+    </StackLayout>
+</ContentPage>

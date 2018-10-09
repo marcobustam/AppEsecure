@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppEsecure.Page3">
+  <ContentPage.Content>
+    <StackLayout>
+      <Label Text="Issues" HorizontalOptions="CenterAndExpand" />
+      <Label x:Name="messageLabel" VerticalOptions="CenterAndExpand" />
+      <Button Text="Traer Issues" Clicked="Button_Clicked" />
+      <Button Text="Crear Issue" Clicked="Create_Issue" />
+      <ListView x:Name="lst" HasUnevenRows="True" ItemSelected="OnItemSelected">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
+                  <Label Text="{Binding IssueItemID}" Font="18"></Label>
+                  <Label Text="{Binding Descripcion}" TextColor="Gray"></Label>
+                </StackLayout>
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>
