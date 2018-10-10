@@ -21,5 +21,8 @@
         <Button Text="Issues"
                     Command="{Binding NavigateCommand}"
                     CommandParameter="{x:Type local:Page3}" />
+        <Button Text="Foto"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="{x:Type local:FotoPage}" />
     </StackLayout>
 </ContentPage>
