@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Android.OS;
+using Plugin.Geolocator;
+using Plugin.Permissions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +24,14 @@ namespace AppEsecure
             
             BindingContext = this;
         }
+        
+        public bool IsLocationAvailable()
+        {
+            if (!CrossGeolocator.IsSupported)
+                return false;
 
+            return CrossGeolocator.Current.IsGeolocationAvailable;
+        }
         public ICommand NavigateCommand { private set; get; }
 
         private void Button_Clicked(object sender, EventArgs e)

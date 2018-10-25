@@ -24,5 +24,8 @@
         <Button Text="Foto"
                     Command="{Binding NavigateCommand}"
                     CommandParameter="{x:Type local:FotoPage}" />
+        <Button Text="GPS"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="{x:Type local:GeoLocator}" />
     </StackLayout>
 </ContentPage>
