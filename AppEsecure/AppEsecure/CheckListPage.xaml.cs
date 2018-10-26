@@ -7,6 +7,7 @@ using System;
 using Newtonsoft.Json;
 using EsecureModel.Exam;
 using AppEsecure.Helper;
+using System.Windows.Input;
 
 namespace AppEsecure
 {
@@ -15,14 +16,22 @@ namespace AppEsecure
     {
         public HttpClient _client;
         List<Test> t = new List<Test>();
+        public ICommand NavigateCommand { private set; get; }
 
         string lista = "";
+        int response = 0;
         public CheckListPage()
         {
 
             InitializeComponent();
             // lst.ItemsSource = new List<string>() { };
+            NavigateCommand = new Command<Type>(async (Type pageType) =>
+            {
+                Page page = (Page)Activator.CreateInstance(pageType);
+                await Navigation.PushAsync(page);
+            });
         }
+
         /*
         public async Task Test()
         {
@@ -46,9 +55,9 @@ namespace AppEsecure
         {
             // await Test();
             // json
-            var lala = await JsonHelper.GetStringFromJson("http://18.231.176.208/gemba/api/tests");
-            var listaTest = JsonConvert.DeserializeObject<IList<Test>>(lala);
-            lsta.ItemsSource = listaTest;
+            var lala = await JsonHelper.GetStringFromJson("http://18.231.176.208/gemba/api/tests/2");
+            var listaTest = JsonConvert.DeserializeObject<CheckList>(lala);
+            lsta.ItemsSource = listaTest.ListaPreguntas;
             var imgsource = "https://image.flaticon.com/icons/svg/1001/1001044.svg";
             /*
             var texts = "";
@@ -63,13 +72,14 @@ namespace AppEsecure
             BindingContext = this;
         }
 
-        private void OnItemSelected(object sender, EventArgs e)
+        private async void OnItemSelected(object sender, EventArgs e)
         {
-            var item = (Test) lsta.SelectedItem;
+            var item = (Question)lsta.SelectedItem;
             messageLabela.Text = "OnItemSelected -> ID: " + item.TestID + " Nombre: " + item.Name;
-
+            await Navigation.PushAsync(new Page4(item.QuestionID));
 
         }
+
 
         /*
         public string GetAllFoos(string jsonList)
@@ -89,6 +99,7 @@ namespace AppEsecure
         void Button_SendResponse(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
+
             switch (btn.Id)
             {
                 default:
@@ -96,5 +107,11 @@ namespace AppEsecure
 
             }
         }
+    }
+    class CheckList
+    {
+        public int testID { get; set; }
+        public string name { get; set; }
+        public IList<Test> ListaPreguntas {get;set;}
     }
 }

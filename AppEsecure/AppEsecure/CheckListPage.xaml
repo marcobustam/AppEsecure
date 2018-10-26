@@ -13,13 +13,13 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
                                 <StackLayout Orientation="Vertical">
-                                    <Label Text="{Binding TestID}" Font="18"></Label>
-                                    <Label Text="{Binding Name}" TextColor="Gray"></Label>
+                                    <Label Text="{Binding testID}" Font="18"></Label>
+                                    <Label Text="{Binding questionID}" TextColor="Gray"></Label>
                                     <Label Text="{Binding categoryID}" Font="18"></Label>
                                     <Label Text="{Binding questionTxt}" TextColor="Gray"></Label>
-                                    <Button x:Name="CU{Binding TestID}" Text="Cumple"  Clicked="Button_SendResponse" />
-                                    <Button x:Name="NC{Binding TestID}" Text="No Cumple" Clicked="Button_SendResponse" />
-                                    <Button x:Name="NA{Binding TestID}" Text="No Aplica" Clicked="Button_SendResponse" />
+                                    <Button x:Name="CU{Binding TestID}" CommandParameter="{Binding questionID, 1}" Text="Cumple"  Clicked="Button_SendResponse" />
+                                    <Button x:Name="NC{Binding TestID}" CommandParameter="{Binding questionID, 2}" Text="No Cumple" Clicked="Button_SendResponse" />
+                                    <Button x:Name="NA{Binding TestID}" CommandParameter="{Binding questionID, 3}" Text="No Aplica" Clicked="Button_SendResponse" />
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>
