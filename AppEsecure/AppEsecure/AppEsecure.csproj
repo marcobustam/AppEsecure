@@ -25,9 +25,11 @@
   <ItemGroup>
     <Reference Include="EsecureModel">
       <HintPath>..\..\..\..\..\OneDrive\Escritorio\SafetyCheck\WebSite\EsecureModel.dll</HintPath>
+      <Private>true</Private>
     </Reference>
     <Reference Include="Mono.Android">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
+      <Private>true</Private>
     </Reference>
   </ItemGroup>
 
