@@ -35,6 +35,9 @@
     <Compile Update="ListaPlanes.xaml.cs">
       <DependentUpon>ListaPlanes.xaml</DependentUpon>
     </Compile>
+    <Compile Update="CheckListPage.xaml.cs">
+      <DependentUpon>CheckListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Page3.xaml.cs">
       <DependentUpon>Page3.xaml</DependentUpon>
     </Compile>
