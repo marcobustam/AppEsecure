@@ -19,26 +19,23 @@
     <PackageReference Include="System.Memory" Version="4.5.1" />
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
-    <PackageReference Include="Xamarin.Forms" Version="3.2.0.871581" />
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.912540" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="EsecureModel">
       <HintPath>..\..\..\..\..\OneDrive\Escritorio\SafetyCheck\WebSite\EsecureModel.dll</HintPath>
-      <Private>true</Private>
+      <Private>false</Private>
     </Reference>
     <Reference Include="Mono.Android">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
-      <Private>true</Private>
+      <Private>false</Private>
     </Reference>
   </ItemGroup>
 
   <ItemGroup>
     <Compile Update="ListaPlanes.xaml.cs">
       <DependentUpon>ListaPlanes.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="CheckListPage.xaml.cs">
-      <DependentUpon>CheckListPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Page3.xaml.cs">
       <DependentUpon>Page3.xaml</DependentUpon>

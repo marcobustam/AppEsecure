@@ -5,21 +5,21 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="CheckList" HorizontalOptions="CenterAndExpand" />
-            <Label x:Name="messageLabel" VerticalOptions="CenterAndExpand" />
+            <Label x:Name="messageLabela" VerticalOptions="CenterAndExpand" />
             <Button Text="Obtener CheckList" Clicked="Button_Clicked" />
-            <ListView x:Name="lst" HasUnevenRows="True" ItemSelected="OnItemSelected">
+            <ListView x:Name="lsta" HasUnevenRows="True" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Label Text="{Binding TestID}" Font="18"></Label>
-                        <Label Text="{Binding Name}" TextColor="Gray"></Label>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
                                 <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding TestID}" Font="18"></Label>
+                                    <Label Text="{Binding Name}" TextColor="Gray"></Label>
                                     <Label Text="{Binding categoryID}" Font="18"></Label>
                                     <Label Text="{Binding questionTxt}" TextColor="Gray"></Label>
-                                    <Button Text="Cumple"  Clicked="Button_SendResponse" />
-                                    <Button Text="No Cumple" Clicked="Button_SendResponse" />
-                                    <Button Text="No Aplica" Clicked="Button_SendResponse" />
+                                    <Button x:Name="CU{Binding TestID}" Text="Cumple"  Clicked="Button_SendResponse" />
+                                    <Button x:Name="NC{Binding TestID}" Text="No Cumple" Clicked="Button_SendResponse" />
+                                    <Button x:Name="NA{Binding TestID}" Text="No Aplica" Clicked="Button_SendResponse" />
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>

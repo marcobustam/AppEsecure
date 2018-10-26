@@ -48,7 +48,7 @@ namespace AppEsecure
             // json
             var lala = await JsonHelper.GetStringFromJson("http://18.231.176.208/gemba/api/tests");
             var listaTest = JsonConvert.DeserializeObject<IList<Test>>(lala);
-            lst.ItemsSource = listaTest;
+            lsta.ItemsSource = listaTest;
             var imgsource = "https://image.flaticon.com/icons/svg/1001/1001044.svg";
             /*
             var texts = "";
@@ -65,8 +65,8 @@ namespace AppEsecure
 
         private void OnItemSelected(object sender, EventArgs e)
         {
-            var item = (Test) lst.SelectedItem;
-            messageLabel.Text = "OnItemSelected -> ID: " + item.TestID + " Nombre: " + item.Name;
+            var item = (Test) lsta.SelectedItem;
+            messageLabela.Text = "OnItemSelected -> ID: " + item.TestID + " Nombre: " + item.Name;
 
 
         }

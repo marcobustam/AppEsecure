@@ -17,7 +17,7 @@
             <Label x:Name="labelGPS"/>
             <Button x:Name="buttonTrack" Text="Track Movements"/>
             <Label x:Name="labelGPSTrack"/>
-            <Label type="Link" x:Name="labelLink"/>
+            <Label x:Name="labelLink"/>
             <Label Text=""/>
 
         </StackLayout>
